@@ -8,24 +8,21 @@ public class playermovement : MonoBehaviour
 
     public CharacterController2D controller;
 
+    public float runSpeed = 40f;
+
     float horizontalMove = 0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-       Input.GetAxisRaw("Horizontal")
+        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
     }
     void FixedUpdate ()
     {
         //move our character
-        controller.move(horizontalMove;, false, false);
+        controller.move(horizontalMove, false, false);
 
     }
 
